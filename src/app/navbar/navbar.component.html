@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
     <span>Sugar-Shack</span>
     <span class="spacer"></span>
-    <a mat-button routerLink="/products" routerLinkActive="active-link">Products</a>
+    <a mat-button routerLink="/products" routerLinkActive="active-link">Catalogue</a>
     <button mat-icon-button>
-        <mat-icon matBadge="{{this.items}}" matBadgeColor="warn">add_shopping_cart</mat-icon>
+        <mat-icon routerLink="/cart" matBadge="{{this.items}}" matBadgeColor="warn">add_shopping_cart</mat-icon>
     </button>
 </mat-toolbar>

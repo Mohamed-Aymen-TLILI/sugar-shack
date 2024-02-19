@@ -1,0 +1,41 @@
+
+table {
+  width: 100%;
+  margin: 10px;
+}
+
+.mat-row,
+.mat-header-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-cell,
+.mat-header-cell {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+}
+
+.mat-row {
+  border-bottom: 1px solid #ccc;
+}
+
+button {
+  margin: 0 4px;
+}
+
+.total-section {
+  margin: 20px;
+  text-align: right;
+
+  p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.order-section {
+  margin: 30px;
+}
+

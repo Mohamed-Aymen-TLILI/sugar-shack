@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import {Select} from "@ngxs/store";
-import {CartState, CartStateModel} from "../store/cart-state";
 import {Observable} from "rxjs";
+
+import {CartState, CartStateModel} from "../shared/store/cart-state";
+
 
 @Component({
     selector: 'app-navbar',

@@ -1,0 +1,36 @@
+
+.product-card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.poster {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: calc(100%/4.1);
+}
+
+.product-card {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  margin: 30px;
+}
+
+.mat-form-field {
+  margin-right: 16px;
+}
+
+

@@ -1,0 +1,22 @@
+<mat-card class="product-detail-card" *ngIf="product">
+  <div class="product-image-container">
+    <img
+      [src]="getBase64Image(product.image)"
+      alt="{{ product.name }}"
+      class="product-detail-image"
+    />
+  </div>
+  <mat-card-content>
+    <h1 class="product-title">{{ product.name }}</h1>
+    <h3 class="product-description">{{ product.description }}</h3>
+    <div class="product-info">
+      <p>Prix: {{ product.price }} $</p>
+      <p>Type: {{ product.type | translateType }}</p>
+    </div>
+    <mat-card-actions class="card-actions">
+      <button mat-raised-button color="primary" (click)="addToCart(product)">
+        Ajouter au panier
+      </button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

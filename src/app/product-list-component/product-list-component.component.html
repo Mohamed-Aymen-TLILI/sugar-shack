@@ -1,1 +1,39 @@
-<p>product-list-component works!</p>
+
+<div *ngIf="isLoading" class="loader-container">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+<ng-container *ngIf="!isLoading; else loader">
+  <div class="filter-container">
+    <mat-form-field>
+      <span for="typeSelect">Sélectionner le type</span>
+      <mat-select id="typeSelect" name="typeSelect"  [(value)]="selectedType" (selectionChange)="filterByType()">
+        <mat-option value="ALL">Tous les types</mat-option>
+        <mat-option value="CLEAR">Claire</mat-option>
+        <mat-option value="AMBER">Ambré</mat-option>
+        <mat-option value="DARK">Foncé</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="product-card-container">
+    <div *ngFor="let product of dataSource.data | filter:selectedType" (click)="findProductById(product.id)">
+      <mat-card class="product-card">
+        <img [src]="getBase64Image(product.image)" alt="{{ product.name }}" class="product-image" />
+        <mat-card-content>
+          <h3>{{ product.name }}</h3>
+          <p>Prix: {{ product.price }} $</p>
+          <p>Type: {{ product.type | translateType }}</p>
+          <button mat-raised-button color="primary" (click)="addToCart($event, product)">Ajouter au panier</button>
+        </mat-card-content>
+      </mat-card>
+      </div>
+    </div>
+</ng-container>
+
+<ng-template #loader>
+  <div class="loader-container">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+</ng-template>
+
